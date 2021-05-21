@@ -31,11 +31,14 @@ def check_price():
         send_mail()
 
 def send_mail():
+    
+    mailID = ''
+    mailPWD = ''
     server = smtplib.SMTP('smtp.google.com', 587)
     server.ehlo()
     server.starttls()
     server.ehlo()
-    server.login('dinakar.pathakota@gmail.com', 'tahvqksdmnpblxom')
+    server.login(mailID, mailPWD)
     subject = 'Price fell down!'
     body = 'Check the link https://www.amazon.in/Sony-ILCE-7M3-Full-Frame-Mirrorless-Interchangeable/dp/B07CJ7NJHG/ref=sr_1_2?dchild=1&keywords=sony+a7s+iii&qid=1621537396&sr=8-2'
     msg  = f"Subject: {subject} \n\n{body}"
